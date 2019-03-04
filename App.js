@@ -8,15 +8,16 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import {
+  Container, Header, Title, Content, Footer, FooterTab, Button, Left, Right, Body, Icon, Text
+} from 'native-base';
+
+import HomeScreen from "./src/HomeScreen/index.js";
 
 export default class App extends Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-      </View>
-    );
+    return <HomeScreen />;
   }
 }
 
