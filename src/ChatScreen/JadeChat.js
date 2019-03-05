@@ -1,18 +1,17 @@
 import React from "react";
-import { AppRegistry, View, StatusBar } from "react-native";
 import { Container, Body, Content, Header, Left, Right, Icon, Title, Input, Item, Label, Button, Text } from "native-base";
-import HomeScreen from "../HomeScreen";
 
 export default class JadeChat extends React.Component {
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+
     return (
       <Container>
         <Header>
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+              onPress={() => navigation.openDrawer()}>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -28,8 +27,8 @@ export default class JadeChat extends React.Component {
           </Item>
           <Button rounded danger
             style={{ marginTop: 20, alignSelf: "center" }}
-            onPress={() => navigate("Profile")}>
-            <Text>Goto Jade Profile</Text>
+            onPress={() => navigation.navigate("Nine")}>
+            <Text>Goto Nine Chat</Text>
           </Button>
         </Content>
       </Container>

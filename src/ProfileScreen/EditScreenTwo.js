@@ -1,8 +1,7 @@
 import React from "react";
-import { AppRegistry, Alert } from "react-native";
 import { Container, Card, CardItem, Body, Content, Header, Left, Right, Icon, Title, Button, Text } from "native-base";
 
-export default class EditScreenTwo extends React.Component {
+class EditScreenTwo extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     header: (
       <Header>
@@ -12,12 +11,13 @@ export default class EditScreenTwo extends React.Component {
           </Button>
         </Left>
         <Body>
-          <Title>EditScreenTwo</Title>
+          <Title>Profile 2</Title>
         </Body>
         <Right />
       </Header>
     )
   });
+
   render() {
     return (
       <Container>
@@ -25,7 +25,7 @@ export default class EditScreenTwo extends React.Component {
           <Card>
             <CardItem>
               <Icon active name="paper-plane" />
-              <Text>Edit Screen 2</Text>
+              <Text>Profile 2</Text>
               <Right>
                 <Icon name="close" />
               </Right>
@@ -33,11 +33,13 @@ export default class EditScreenTwo extends React.Component {
           </Card>
           <Button full rounded primary
             style={{ marginTop: 10 }}
-            onPress={() => this.props.navigation.navigate("EditScreenOne")}>
-            <Text>Goto EditScreenOne</Text>
+            onPress={() => this.props.navigation.navigate("EditOne")}>
+            <Text>Goto Profile Two</Text>
           </Button>
         </Content>
       </Container>
     );
   }
 }
+
+export default EditScreenTwo;

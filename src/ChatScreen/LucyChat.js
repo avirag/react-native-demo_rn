@@ -1,18 +1,17 @@
-import React from "react";
-import { AppRegistry, View, StatusBar } from "react-native";
+import React, { Component } from "react";
 import { Container, Body, Content, Header, Left, Right, Icon, Title, Input, Item, Label, Button, Text } from "native-base";
-import HomeScreen from "../HomeScreen";
 
-export default class LucyChat extends React.Component {
+export default class LucyChat extends Component {
   render() {
-    const { navigate } = this.props.navigation;
+    const { navigation } = this.props;
+
     return (
       <Container>
         <Header>
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+              onPress={() => navigation.openDrawer()}>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -28,8 +27,8 @@ export default class LucyChat extends React.Component {
           </Item>
           <Button rounded danger
             style={{ marginTop: 20, alignSelf: "center" }}
-            onPress={() => navigate("Profile")}>
-            <Text>Goto Lucy Profile</Text>
+            onPress={() => navigation.navigate("Jade")}>
+            <Text>Goto Jade Chat</Text>
           </Button>
         </Content>
       </Container>

@@ -1,19 +1,20 @@
-import React, { Component } from "react";
-import HomeScreen from "./HomeScreen.js";
-import MainScreenNavigator from "../ChatScreen/index.js";
-import Profile from "../ProfileScreen/index.js";
-import SideBar from "../SideBar/SideBar.js";
-import { DrawerNavigator } from "react-navigation";
+import { createDrawerNavigator } from "react-navigation";
 
-const HomeScreenRouter = DrawerNavigator(
+import ChatBottomTabNavigator from "../ChatScreen/index.js";
+import ProfileStackNavigator from "../ProfileScreen/index.js";
+
+
+const HomeDrawerNavigator = createDrawerNavigator(
   {
-    Home: { screen: HomeScreen },
-    Chat: { screen: MainScreenNavigator },
-    Profile: { screen: Profile }
+    Profile: { screen: ProfileStackNavigator },
+    Chat: { screen: ChatBottomTabNavigator }
   },
   {
-    contentComponent: props => <SideBar {...props} />
+    initialRouteName: 'Profile',
+    contentOptions: {
+      activeTintColor: '#e91e63'
+    }
   }
 );
 
-export default HomeScreenRouter;
+export default HomeDrawerNavigator;

@@ -1,11 +1,28 @@
-import React, { Component } from "react";
-import Profile from "./Profile.js";
+import React from 'react';
+import { createStackNavigator } from "react-navigation";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
+import ProfileScreen from "./ProfileScreen.js";
 import EditScreenOne from "./EditScreenOne.js";
 import EditScreenTwo from "./EditScreenTwo.js";
-import { StackNavigator } from "react-navigation";
 
-export default (DrawNav = StackNavigator({
-  Profile: { screen: Profile },
-  EditScreenOne: { screen: EditScreenOne },
-  EditScreenTwo: { screen: EditScreenTwo }
-}));
+
+export default createStackNavigator(
+  {
+    Profile: { screen: ProfileScreen },
+    EditOne: { screen: EditScreenOne },
+    EditTwo: { screen: EditScreenTwo }
+  },
+  {
+    navigationOptions: {
+      drawerLabel: 'Profile',
+      drawerIcon: ({ tintColor }) => (
+        <MaterialIcons
+          name="account-box"
+          size={24}
+          style={{ color: tintColor }}
+        />
+      )
+    }
+  }
+);
